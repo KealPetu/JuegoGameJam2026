@@ -10,6 +10,7 @@ func _ready():
 	attack_collision_shape.rotation_degrees = -90.0
 	attack_collision_shape.scale.y = 15.0
 	collision_shape_2d.scale = Vector2(6.0, 6.0)
+	super._ready()
 
 # Sobreescribimos la función de movimiento del padre
 func comportamiento_movimiento(_delta):
@@ -49,4 +50,4 @@ func morir():
 
 func _on_attack_area_body_entered(body):
 	if body is Character and body != self:
-		body.recibir_dano(1, global_position)
+		body.recibir_dano(damage, global_position)

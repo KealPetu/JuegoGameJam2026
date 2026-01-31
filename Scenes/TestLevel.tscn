@@ -2,16 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://cohiqpndtgam" path="res://Scenes/Enemy.tscn" id="1_5ms4e"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="2_ujyaq"]
+[ext_resource type="Texture2D" uid="uid://b4flmdtq8h8a6" path="res://Assets/Screenshot 2025-11-15 204155.png" id="3_shgkq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5ms4e"]
 
 [node name="TestLevel" type="Node2D" unique_id=722028303]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1102881253]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 644.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+texture = ExtResource("3_shgkq")
 
 [node name="Enemy" parent="." unique_id=159421936 instance=ExtResource("1_5ms4e")]
 position = Vector2(981, 103)
 
 [node name="Player" parent="." unique_id=566396496 instance=ExtResource("2_ujyaq")]
 position = Vector2(110, 110)
+fuerza_salto = -600.0
+velocidad_movimiento = 500.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1839650488]
 

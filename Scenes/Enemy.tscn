@@ -10,7 +10,6 @@
 
 [node name="Enemy" unique_id=159421936 instance=ExtResource("1_m1htj")]
 script = ExtResource("2_wovta")
-dano_al_contacto = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=1963649647]
 modulate = Color(1, 0.19607843, 0.19607843, 1)

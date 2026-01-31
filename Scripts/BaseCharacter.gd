@@ -5,8 +5,9 @@ class_name Character extends CharacterBody2D
 
 # Atributos compartidos por TODOS (Jugador, Enemigos, Jefes)
 @export var velocidad_movimiento: float = 200.0
-@export var vidas_maximas: int = 1
+@export var vidas_maximas: int = 3
 @export var empuje_al_recibir_dano: float = 300.0
+@export var damage: int = 1
 
 var vidas_actuales: int
 var gravedad = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -35,7 +36,7 @@ func recibir_dano(cantidad: int, origen_dano: Vector2 = Vector2.ZERO):
 	
 	# Feedback visual (parpadeo rojo)
 	modulate = Color.RED
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.2).timeout
 	modulate = Color.WHITE
 	
 	# Empuje simple hacia el lado contrario del golpe

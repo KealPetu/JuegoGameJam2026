@@ -1,10 +1,10 @@
 extends Character
 
-@export var dano_al_contacto: int = 1
 @onready var damage_area: Area2D = $DamageArea
 
 func _ready():
 	damage_area.body_entered.connect(_on_damage_area_body_entered)
+	super._ready()
 
 # Si quieres que el enemigo básico no se mueva, en el inspector pon 'velocidad_movimiento' en 0.
 # Si quieres que persiga, aquí pondríamos la IA.
@@ -26,4 +26,4 @@ func _on_damage_area_body_entered(body):
 	# Verificamos si es el jugador (usando la clase base para detectar)
 	if body is Character and body.name == "Player":
 		# Le pasamos nuestra posición para que el jugador sepa de dónde vino el golpe
-		body.recibir_dano(dano_al_contacto, global_position)
+		body.recibir_dano(damage, global_position)
