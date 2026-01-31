@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cohiqpndtgam"]
+
+[ext_resource type="PackedScene" uid="uid://dqojtyf4in0y3" path="res://Scenes/BaseCharacter.tscn" id="1_m1htj"]
+[ext_resource type="Script" uid="uid://bgeijfwvjapt1" path="res://Scripts/BasicEnemy.gd" id="2_wovta"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_xeo28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeo28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpr8r"]
+
+[node name="Enemy" unique_id=159421936 instance=ExtResource("1_m1htj")]
+script = ExtResource("2_wovta")
+dano_al_contacto = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=1963649647]
+modulate = Color(1, 0.19607843, 0.19607843, 1)
+texture = ExtResource("3_xeo28")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=687936149]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_xeo28")
+
+[node name="DamageArea" type="Area2D" parent="." index="2" unique_id=1327600431]
+
+[node name="DamageCollisionShape" type="CollisionShape2D" parent="DamageArea" index="0" unique_id=1593748461]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_kpr8r")
